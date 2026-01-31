@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pitch-50: #e8f5e9;
+  --color-pitch-100: #c8e6c9;
+  --color-pitch-200: #a5d6a7;
+  --color-pitch-300: #81c784;
+  --color-pitch-400: #66bb6a;
+  --color-pitch-500: #2e7d32;
+  --color-pitch-600: #1b5e20;
+  --color-pitch-700: #0f3d15;
+  --color-pitch-800: #0a2b0e;
+  --color-pitch-900: #0a1f0f;
+  --color-pitch-950: #071509;
+
+  --color-lime-400: #c4f53b;
+  --color-lime-500: #b0e030;
+  --color-lime-600: #9cc828;
+
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+
+  --color-charcoal-50: #f5f5f5;
+  --color-charcoal-100: #e0e0e0;
+  --color-charcoal-200: #bdbdbd;
+  --color-charcoal-300: #9e9e9e;
+  --color-charcoal-400: #757575;
+  --color-charcoal-500: #616161;
+  --color-charcoal-600: #424242;
+  --color-charcoal-700: #2a2a2a;
+  --color-charcoal-800: #1a1a1a;
+  --color-charcoal-900: #111111;
+  --color-charcoal-950: #0a0a0a;
+
+  --color-surface-1: #0d0d0d;
+  --color-surface-2: #151515;
+  --color-surface-3: #1c1c1c;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-charcoal-950 text-charcoal-100 font-sans;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::selection {
+    background: rgba(196, 245, 59, 0.3);
+    color: white;
+  }
+}
+
+/* ── glass morphism ────────────────────────────────── */
+@utility glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+/* ── gradient text (lime → cyan) ──────────────────── */
+@utility gradient-text {
+  background: linear-gradient(135deg, #c4f53b 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── glow effects ─────────────────────────────────── */
+@utility glow-lime {
+  box-shadow:
+    0 0 20px rgba(196, 245, 59, 0.2),
+    0 0 60px rgba(196, 245, 59, 0.06);
+}
+
+@utility glow-lime-strong {
+  box-shadow:
+    0 0 30px rgba(196, 245, 59, 0.3),
+    0 0 80px rgba(196, 245, 59, 0.1),
+    0 0 120px rgba(196, 245, 59, 0.04);
+}
+
+@utility glow-cyan {
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.15),
+    0 0 60px rgba(34, 211, 238, 0.05);
+}
+
+/* ── pitch gradient background ────────────────────── */
+@utility pitch-gradient {
+  background: linear-gradient(135deg, #0a1f0f 0%, #0d0d0d 40%, #0a0a0a 60%, #0a1f0f 100%);
+}
+
+/* ── noise / grain overlay (pure CSS) ─────────────── */
+@utility noise-overlay {
+  position: relative;
+}
+
+/* ── pitch lines SVG pattern overlay ──────────────── */
+.pitch-lines-bg {
+  position: relative;
+}
+.pitch-lines-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='pitch' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Crect width='200' height='200' fill='none'/%3E%3Ccircle cx='100' cy='100' r='40' stroke='%23c4f53b' stroke-width='0.5' fill='none'/%3E%3Cline x1='100' y1='0' x2='100' y2='200' stroke='%23c4f53b' stroke-width='0.3'/%3E%3Cline x1='0' y1='100' x2='200' y2='100' stroke='%23c4f53b' stroke-width='0.3'/%3E%3Crect x='10' y='60' width='20' height='80' stroke='%23c4f53b' stroke-width='0.3' fill='none'/%3E%3Crect x='170' y='60' width='20' height='80' stroke='%23c4f53b' stroke-width='0.3' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23pitch)'/%3E%3C/svg%3E");
+}
+
+/* subtle grain via CSS only */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── float animation ──────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── hero floating cards (two speeds, offset timing) ── */
+@keyframes hero-float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+}
+
+@keyframes hero-float-fast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-0.5deg); }
+}
+
+.hero-float-slow {
+  animation: hero-float-slow 7s ease-in-out infinite;
+}
+
+.hero-float-fast {
+  animation: hero-float-fast 5s ease-in-out 1s infinite;
+}
+
+/* ── hero glow pulse ──────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* ── shimmer for cards ────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(196, 245, 59, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+/* ── reduced motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .pitch-lines-bg::before,
+  .grain-overlay::after {
+    display: none;
+  }
+}
