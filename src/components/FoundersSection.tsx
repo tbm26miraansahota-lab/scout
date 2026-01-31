@@ -1,5 +1,5 @@
-import miraanImg from "../assets/founders/miraan.jpeg";
-import romilImg from "../assets/founders/romil.jpeg";
+import miraanImg from "../assets/Founders/miraan.jpeg";
+import romilImg from "../assets/Founders/romil.jpeg";
 
 function FounderCard({
   name,
