@@ -1,32 +1,36 @@
 import { Video, BarChart3, Link2, Search, Users, ShieldCheck, Smartphone, Globe } from 'lucide-react';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Button } from '../components/ui/Button';
+import featureAnalysis from '../assets/Product/feature-analysis.png';
+import featureProfiles from '../assets/Product/feature-profiles.png';
+import featureDashboards from '../assets/Product/feature-dashboards.png';
+import featureNetwork from '../assets/Product/feature-network.png';
 
 const coreFeatures = [
   {
     icon: <Video className="w-6 h-6" />,
-    img: <img src="../src/assets/Product/feature-analysis.png" alt="AI-Assisted Video Analysis" />,
+    img: <img src={featureAnalysis} alt="AI-Assisted Video Analysis" />,
     title: 'AI-Assisted Video Analysis',
     description: 'Upload match footage from any smartphone. Our AI extracts player metrics — speed, stamina, passing accuracy, shooting, dribbling, and defensive positioning — automatically.',
     tags: ['Computer Vision', 'Automated', 'No Hardware'],
   },
   {
     icon: <Link2 className="w-6 h-6" />,
-    img: <img src="../src/assets/Product/feature-profiles.png" alt="AI-Assisted Video Analysis" />,
+    img: <img src={featureProfiles} alt="AI-Assisted Video Analysis" />,
     title: 'Shareable Player Profiles',
     description: 'Every player gets one verified link with their complete football identity — stats, highlights, match history, growth trajectory, and verification badges.',
     tags: ['One Link', 'Verified', 'Sports Quota Ready'],
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,
-    img: <img src="../src/assets/Product/feature-dashboards.png" alt="AI-Assisted Video Analysis" />,
+    img: <img src={featureDashboards} alt="AI-Assisted Video Analysis" />,
     title: 'School Coach Dashboard',
     description: 'Manage your full roster, track growth over time, compare players, and prepare for tournaments. Replace fragmented WhatsApp groups and Excel sheets.',
     tags: ['Roster Management', 'Growth Tracking', 'Analytics'],
   },
   {
     icon: <Search className="w-6 h-6" />,
-    img: <img src="../src/assets/Product/feature-network.png" alt="AI-Assisted Video Analysis" />,
+    img: <img src={featureNetwork} alt="AI-Assisted Video Analysis" />,
     title: 'Scout Discovery Network',
     description: 'Search and filter players by position, age, location, metrics, and more. Compare up to 3 players side-by-side. Build shortlists. Discover talent you\'d never find otherwise.',
     tags: ['Advanced Filters', 'Compare', 'Nationwide'],
