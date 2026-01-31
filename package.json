@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "heroku-start": "vite"
+    "heroku-start": "vite --port 80"
   },
   "dependencies": {
     "framer-motion": "^12.29.2",
