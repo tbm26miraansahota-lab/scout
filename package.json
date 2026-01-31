@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "heroku-postbuild": "npm start"
+    "heroku-start": "vite"
   },
   "dependencies": {
     "framer-motion": "^12.29.2",
