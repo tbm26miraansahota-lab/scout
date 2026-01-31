@@ -5,24 +5,28 @@ import { Button } from '../components/ui/Button';
 const coreFeatures = [
   {
     icon: <Video className="w-6 h-6" />,
+    img: <img src="../src/assets/Product/feature-analysis.png" alt="AI-Assisted Video Analysis" />,
     title: 'AI-Assisted Video Analysis',
     description: 'Upload match footage from any smartphone. Our AI extracts player metrics — speed, stamina, passing accuracy, shooting, dribbling, and defensive positioning — automatically.',
     tags: ['Computer Vision', 'Automated', 'No Hardware'],
   },
   {
     icon: <Link2 className="w-6 h-6" />,
+    img: <img src="../src/assets/Product/feature-profiles.png" alt="AI-Assisted Video Analysis" />,
     title: 'Shareable Player Profiles',
     description: 'Every player gets one verified link with their complete football identity — stats, highlights, match history, growth trajectory, and verification badges.',
     tags: ['One Link', 'Verified', 'Sports Quota Ready'],
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,
+    img: <img src="../src/assets/Product/feature-dashboards.png" alt="AI-Assisted Video Analysis" />,
     title: 'School Coach Dashboard',
     description: 'Manage your full roster, track growth over time, compare players, and prepare for tournaments. Replace fragmented WhatsApp groups and Excel sheets.',
     tags: ['Roster Management', 'Growth Tracking', 'Analytics'],
   },
   {
     icon: <Search className="w-6 h-6" />,
+    img: <img src="../src/assets/Product/feature-network.png" alt="AI-Assisted Video Analysis" />,
     title: 'Scout Discovery Network',
     description: 'Search and filter players by position, age, location, metrics, and more. Compare up to 3 players side-by-side. Build shortlists. Discover talent you\'d never find otherwise.',
     tags: ['Advanced Filters', 'Compare', 'Nationwide'],
@@ -75,8 +79,8 @@ export default function Product() {
               </div>
               <div className="w-full lg:w-96 h-48 rounded-xl bg-charcoal-800 border border-charcoal-700 flex items-center justify-center text-charcoal-600 shrink-0">
                 <div className="text-center">
-                  <div className="text-4xl mb-2">{feature.icon}</div>
-                  <div className="text-sm">Feature Preview</div>
+                  <div className="text-4xl mb-2">{feature.img}</div>
+                  {/* <div className="text-sm">Feature Preview</div> */}
                 </div>
               </div>
             </div>
