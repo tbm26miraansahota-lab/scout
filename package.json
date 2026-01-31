@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite --port 3000",
+    "start": "vite",
     "heroku-postbuild": "npm start"
   },
   "dependencies": {
